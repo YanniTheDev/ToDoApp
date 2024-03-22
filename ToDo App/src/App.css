@@ -1,0 +1,30 @@
+/* CSS RESET CODE */
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* REAL STYLING CODE */
+
+/* REUSABLES */
+.flex-c-c {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
