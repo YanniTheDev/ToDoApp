@@ -1,4 +1,6 @@
-import "../App.css";
+import "../CSS Stylings/Reusables.css";
+import "../CSS Stylings/Resets.css";
+import "../CSS Stylings/Component Stylings/Tasks.css";
 
 interface ITasks {
     task: String
@@ -6,8 +8,8 @@ interface ITasks {
 
 export const Tasks = (props:ITasks) => {
     return (
-        <div className="flex-row">
-            {props.task}
+        <div className="tasks flex-c-c flex-row">
+            <h1 className="tasks-name">{props.task}</h1>
 
             <button>X</button>
         </div>

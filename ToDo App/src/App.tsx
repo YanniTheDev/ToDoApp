@@ -1,5 +1,7 @@
 import { useState } from "react";
-import "./App.css";
+import "./CSS Stylings/App.css";
+import "./CSS Stylings/Reusables.css";
+import "./CSS Stylings/Resets.css";
 
 // COMPONENTS
 import { Tasks } from "./Components/Tasks";
