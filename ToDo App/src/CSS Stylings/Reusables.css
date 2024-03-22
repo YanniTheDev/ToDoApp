@@ -1,0 +1,14 @@
+/* REUSABLES */
+.flex-c-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+   
+.flex-column {
+    flex-direction: column;
+}
+   
+.flex-row {
+    flex-direction: row;
+}

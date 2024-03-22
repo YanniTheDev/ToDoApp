@@ -1,0 +1,10 @@
+.tasks {
+    max-width: 60vw;
+
+    /* flex display properties are in Reusables.css */
+    gap: 2vw;
+}
+
+.tasks-name {
+    max-width: 60vw;
+}
