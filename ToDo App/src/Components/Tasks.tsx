@@ -3,15 +3,21 @@ import "../CSS Stylings/Resets.css";
 import "../CSS Stylings/Component Stylings/Tasks.css";
 
 interface ITasks {
-    task: String
+    taskName: string,
+    id: number,
+    deleteTaskFunc: any
 }
 
 export const Tasks = (props:ITasks) => {
     return (
         <div className="tasks flex-c-c flex-row">
-            <h1 className="tasks-name">{props.task}</h1>
+            <h1 className="tasks-name">{props.taskName}</h1>
 
-            <button>X</button>
+            <button onClick={() => {
+                props.deleteTaskFunc(props.id)
+            }}>
+                X
+            </button>
         </div>
     );
 }
