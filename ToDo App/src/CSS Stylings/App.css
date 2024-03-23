@@ -1,1 +1,6 @@
+header {
+    /* Flex properties in Reusables.css */
+    gap: 2vw;
 
+    margin-top: 2vh;
+}
