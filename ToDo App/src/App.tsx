@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import "./CSS Stylings/App.css";
 import "./CSS Stylings/Reusables.css";
 import "./CSS Stylings/Resets.css";
@@ -56,8 +57,8 @@ function App() {
 
   return (
     <div className="content flex-c-c flex-column">
-      <header>
-        <input type="text" onChange={AddTaskInput}/>
+      <header className="flex-c-c flex-row">
+        <input type="text" placeholder="Enter task" onChange={AddTaskInput}/>
         <button onClick={CreateTask}>+</button>
       </header>
 
