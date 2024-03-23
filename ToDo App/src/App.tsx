@@ -4,9 +4,10 @@ import "./CSS Stylings/Reusables.css";
 import "./CSS Stylings/Resets.css";
 
 // INTERFACES
-interface ITask {
+export interface ITask {
   id: number,
-  taskName: string
+  taskName: string,
+  completed: boolean
 }
 
 // COMPONENTS
@@ -19,7 +20,8 @@ function App() {
   const CreateTask = () => {
     const templateTask = {
       id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
-      taskName: newTask
+      taskName: newTask,
+      completed: false
     }
 
     const newTasks = [...tasks, templateTask]
@@ -32,11 +34,24 @@ function App() {
   }
 
   const DeleteTask = (id:number) => {
-    const newTasks = tasks.filter((taskName) => {
+    const updateTasks = tasks.filter((taskName) => {
       return taskName.id !== id;
     });
 
-    setTasks(newTasks);
+    setTasks(updateTasks);
+  }
+
+  const CompleteTask = (id:number) => {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === id) {
+        return {...task, completed: true};
+      }
+      else {
+        return task;
+      }
+    })
+
+    setTasks(updatedTasks);
   }
 
   return (
@@ -49,7 +64,7 @@ function App() {
       {
         tasks.map((task) => {
           return (
-            <Tasks taskName={task.taskName} id={task.id} deleteTaskFunc={DeleteTask}/>
+            <Tasks task={task} deleteTaskFunc={DeleteTask} completeTaskFunc={CompleteTask}/>
           );
         })
       }

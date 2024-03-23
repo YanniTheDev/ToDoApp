@@ -8,3 +8,11 @@
 .tasks-name {
     max-width: 60vw;
 }
+
+.uncomplete-task-bg-color {
+    background-color: none;
+}
+
+.completed-task-bg-color {
+    background-color: rgb(0, 255, 123);
+}
