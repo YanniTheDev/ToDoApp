@@ -19,6 +19,10 @@ function App() {
   const [tasks, setTasks] = useState<ITask[]>([]);
 
   const CreateTask = () => {
+    if (newTask.trim() === "") {
+      return;
+    }
+
     const templateTask = {
       id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
       taskName: newTask,
@@ -58,7 +62,14 @@ function App() {
   return (
     <div className="content flex-c-c flex-column">
       <header className="flex-c-c flex-row">
-        <input type="text" placeholder="Enter task" onChange={AddTaskInput}/>
+        <input type="text" placeholder="Enter task" 
+                           onChange={AddTaskInput} 
+                           onKeyUp={ (event) => {
+                            if (event.key === "Enter") {
+                              CreateTask();
+                            }
+                           }}
+        />
         <button onClick={CreateTask}>+</button>
       </header>
 
