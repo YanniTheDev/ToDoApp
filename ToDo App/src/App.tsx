@@ -20,7 +20,7 @@ function App() {
 
   const CreateTask = () => {
     if (newTask.trim() === "") {
-      return;
+      return ;
     }
 
     const templateTask = {
@@ -84,4 +84,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
